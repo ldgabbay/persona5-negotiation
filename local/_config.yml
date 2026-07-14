@@ -1,0 +1,11 @@
+baseurl: ""
+cache_dir: local/.jekyll-cache
+data_dir: local/_data
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-default-layout
+exclude:
+  - README.md
+  - Makefile
+  - data/
+  - local/
