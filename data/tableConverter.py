@@ -74,7 +74,7 @@ def filter_list(unique_shadows):
         output += btn
     return output
 
-def convert_csv_to_new_tables(datafilename, outputfilename, indexfilename, royalFlag):
+def convert_csv_to_new_tables(datafilename, outputfilename, headerfilename, footerfilename, royalFlag):
     if royalFlag:
         print("Generating ROYAL Tables...")
     else:
@@ -84,8 +84,11 @@ def convert_csv_to_new_tables(datafilename, outputfilename, indexfilename, royal
     ws = wb.active
 
     outputfile = open(outputfilename, 'w', encoding="utf8")
-    indexfile = open(indexfilename, encoding="utf8")
-    
+    with open(headerfilename, "r", encoding="utf-8") as f:
+        top_text = f.read()
+    with open(footerfilename, "r", encoding="utf-8") as f:
+        bot_text = f.read()
+
     table_text = []
     unique_shadows = []
     all_shadow_groups = []
@@ -152,8 +155,6 @@ def convert_csv_to_new_tables(datafilename, outputfilename, indexfilename, royal
         if r != 0:
             table_text.append(create_table(question_text, tags, first_text, second_text, third_text, first_res, second_res, third_res, color_first_res, color_second_res, color_third_res))
 
-    indexHTML = indexfile.read().split('<div id="questions">')
-    top_text = indexHTML[0]
     top_text = re.sub(r'<div class="card-body" id="shadowFilterBtns">(\s*<button.*)*', '<div class="card-body" id="shadowFilterBtns">\n' + filter_list(unique_shadows), top_text)
 
     outputfile.write(top_text)
@@ -162,8 +163,6 @@ def convert_csv_to_new_tables(datafilename, outputfilename, indexfilename, royal
         outputfile.write(table)
     outputfile.write("\n</div>")
 
-    indexHTML_script = indexHTML[1].split('<!-- LOCAL STORAGE OF SWITCH STATE -->')
-    bot_text = indexHTML_script[1]
     outputfile.write('\n\n<!-- LOCAL STORAGE OF SWITCH STATE -->')
     outputfile.write(bot_text)
 
@@ -181,11 +180,13 @@ def convert_csv_to_new_tables(datafilename, outputfilename, indexfilename, royal
 
 royal_file = 'data/persona-5-royal-questions.xlsx'
 royal_output = 'data/output-royal.html'
-royal_index = 'royal.md'
+royal_header = 'data/header.royal.html'
+royal_footer = 'data/footer.royal.html'
 
 original_file = 'data/persona-5-questions.xlsx'
 original_output = 'data/output-original.html'
-original_index = 'index.md'
+original_header = 'data/header.index.html'
+original_footer = 'data/footer.index.html'
 
-convert_csv_to_new_tables(royal_file, royal_output, royal_index, True)
-convert_csv_to_new_tables(original_file, original_output, original_index, False)
+convert_csv_to_new_tables(royal_file, royal_output, royal_header, royal_footer, True)
+convert_csv_to_new_tables(original_file, original_output, original_header, original_footer, False)

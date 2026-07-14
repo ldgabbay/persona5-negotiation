@@ -1,0 +1,253 @@
+<div style="display: none">If you are seeing this from Github, there is a user-friendly version of this page with an embeded searchbar at: http://joyce-chen.github.io/persona5-negotiation/royal<br><br>
+</div>
+
+<div style="display: flex; flex-wrap: wrap;">
+	<div style="flex: 3" class="input-group">
+		<input class="form-control py-2 border-right-0 border" type="text" id="searchBar" onkeyup="filterQuestions()" placeholder="Search for questions or responses.." title="Type in a question or response">
+		<span class="input-group-append">
+			<div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+		</span>
+	</div>
+
+	<div style="flex: 1; text-align: center; margin-top: auto; margin-bottom: auto;">
+		<label class="switch">
+			<input type="checkbox" id="royalCompact" onClick="toggleRoyalCompact(false)">
+			<span class="slider round">
+				<i class="fas fa-icons"></i>
+                <i class="fas fa-font"></i>
+			</span>
+		</label>
+	</div>
+</div>
+<div style="margin-top: 1rem;">TIP: Reactions with a white background have been either sent in or are from my own playthrough; they are less likely to be wrong. Reactions that are empty or have a dash (-) are lacking data. Reactions with <span class="unconfirmed">pink backgrounds</span> are unconfirmed and are from the original game.
+</div>
+
+<div id="accordion" style="margin-top: 1rem;">
+	<div class="card">
+		<div class="card-header" style="padding: 0;">
+			<a class="card-link" data-toggle="collapse" href="#shadowFilters" style="display: block; padding:.75rem 1.25rem">
+			Filter Questions by Shadows (WIP feature)
+			</a>
+		</div>
+		<div id="shadowFilters" class="collapse hide" data-parent="#accordion">
+			<div class="card-body" id="shadowFilterBtns">
+				<button class="btn filter-btn active" style="font-weight:bold;" onclick="filterByShadows('all')"> Show all</button>
+				<button class="btn filter-btn" style="font-weight:bold;" onclick="filterByShadows('None')"> Uncategorized</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Abaddon')"> Abaddon</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Agathion')"> Agathion</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Alilat')"> Alilat</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Ame-no-Uzume')"> Ame-no-Uzume</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Andras')"> Andras</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Angel')"> Angel</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Anubis')"> Anubis</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Anzu')"> Anzu</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Apsaras')"> Apsaras</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Arahabaki')"> Arahabaki</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Archangel')"> Archangel</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Atavaka')"> Atavaka</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Baal')"> Baal</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Baphomet')"> Baphomet</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Barong')"> Barong</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Belphegor')"> Belphegor</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Berith')"> Berith</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Bicorn')"> Bicorn</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Black_Ooze')"> Black Ooze</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Byakhee')"> Byakhee</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Cait_Sith')"> Cait Sith</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Cerberus')"> Cerberus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Chernobog')"> Chernobog</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Chimera')"> Chimera</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Choronzon')"> Choronzon</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Cu_Chulainn')"> Cu Chulainn</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Dakini')"> Dakini</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Decarabia')"> Decarabia</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Dionysus')"> Dionysus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Dominion')"> Dominion</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Dyonisus')"> Dyonisus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Eligor')"> Eligor</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Fafnir')"> Fafnir</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Forneus')"> Forneus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Fuu-ki')"> Fuu-ki</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Ganesha')"> Ganesha</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Garuda')"> Garuda</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Girimehkala')"> Girimehkala</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Hanuman')"> Hanuman</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Hastur')"> Hastur</button>
+				<button class="btn filter-btn" onclick="filterByShadows('High_Pixie')"> High Pixie</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Hua_Po')"> Hua Po</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Incubus')"> Incubus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Inugami')"> Inugami</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Ippon-Datara')"> Ippon-Datara</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Isis')"> Isis</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Jack_Frost')"> Jack Frost</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Jack-o-Lantern')"> Jack-o-Lantern</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Jatayu')"> Jatayu</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kaiwan')"> Kaiwan</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kali')"> Kali</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kelpie')"> Kelpie</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kikuri-Hime')"> Kikuri-Hime</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kin-ki')"> Kin-ki</button>
+				<button class="btn filter-btn" onclick="filterByShadows('King_Frost')"> King Frost</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kodama')"> Kodama</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Koppa_Tengu')"> Koppa Tengu</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Koropokguru')"> Koropokguru</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kumbhanda')"> Kumbhanda</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kurama_Tengu')"> Kurama Tengu</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Kushinada')"> Kushinada</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Lamia')"> Lamia</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Leanan_Sidhe')"> Leanan Sidhe</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Legion')"> Legion</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Lilim')"> Lilim</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Lilith')"> Lilith</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Loa')"> Loa</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Macabre')"> Macabre</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Makami')"> Makami</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Mandrake')"> Mandrake</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Mara')"> Mara</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Melchizedek')"> Melchizedek</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Mithras')"> Mithras</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Mokoi')"> Mokoi</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Moloch')"> Moloch</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Mot')"> Mot</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Mothman')"> Mothman</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Naga')"> Naga</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Narcissus')"> Narcissus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Nebiros')"> Nebiros</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Nekomata')"> Nekomata</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Norn')"> Norn</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Nue')"> Nue</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Obariyon')"> Obariyon</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Oberon')"> Oberon</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Oni')"> Oni</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Onmoraki')"> Onmoraki</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Orobas')"> Orobas</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Orthrus')"> Orthrus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Ose')"> Ose</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Parvati')"> Parvati</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Pisaca')"> Pisaca</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Pixie')"> Pixie</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Power')"> Power</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Queen_Mab')"> Queen Mab</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Rakshasa')"> Rakshasa</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Rangda')"> Rangda</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Sandman')"> Sandman</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Sarasvati')"> Sarasvati</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Scathach')"> Scathach</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Shiisaa')"> Shiisaa</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Shiki-Ouji')"> Shiki-Ouji</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Silky')"> Silky</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Skadi')"> Skadi</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Slime')"> Slime</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Succubus')"> Succubus</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Sudama')"> Sudama</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Sui-ki')"> Sui-ki</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Take-Minakata')"> Take-Minakata</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Thor')"> Thor</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Thoth')"> Thoth</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Throne')"> Throne</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Thunderbird')"> Thunderbird</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Titania')"> Titania</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Unicorn')"> Unicorn</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Valkyrie')"> Valkyrie</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Yaksini')"> Yaksini</button>
+				<button class="btn filter-btn" onclick="filterByShadows('Yamata-no-Orochi')"> Yamata-no-Orochi</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+function filterQuestions() {
+    var input, filter, div, table, tr;
+    input = document.getElementById("searchBar");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("questions");
+	table = div.getElementsByTagName("table");
+    for (i = 0; i < table.length; i++) {
+		var question = table[i].getElementsByTagName("th")[0].textContent.toUpperCase();
+		var answerOne = table[i].getElementsByTagName("td")[5].textContent.toUpperCase();
+		var answerTwo = table[i].getElementsByTagName("td")[10].textContent.toUpperCase();
+		var answerThree = table[i].getElementsByTagName("td")[15].textContent.toUpperCase();
+		
+		if (question.indexOf(filter) > -1 || answerOne.indexOf(filter) > -1 || answerTwo.indexOf(filter) > -1 || answerThree.indexOf(filter) > -1) {
+			table[i].style.display = "";
+		} else {
+			table[i].style.display = "none";
+		}
+    }
+}
+
+function toggleRoyalCompact(loading) {
+	var compactSwitch = document.getElementById("royalCompact");
+	if (!loading) {
+		localStorage.setItem(compactSwitch.id, compactSwitch.checked);
+	}
+	var checked = JSON.parse(localStorage.getItem(compactSwitch.id));
+
+	var text = document.getElementsByClassName("text");
+	var symbol = document.getElementsByClassName("symbol");
+	for (var i = 0; i < text.length; i++) {
+		if (checked) {
+			symbol[i].style.display = "block";
+			text[i].style.display = "none";
+		} else {
+			symbol[i].style.display = "none";
+			text[i].style.display = "block";
+		}
+	}
+
+	var extra = document.getElementsByClassName("extra");
+	for (var i = 0; i < extra.length; i++) {
+		if (checked) {
+			extra[i].style.display = "none";
+		} else {
+			extra[i].style.display = "inline";
+		}
+	}
+}
+
+function filterByShadows(shadow) {
+	var target = document.getElementsByClassName("filterDiv");
+	if (shadow == "all") shadow = "";
+	for (var i = 0; i < target.length; i++) {
+		filterAddClass(target[i], "hidden");
+		if (target[i].className.indexOf(shadow) > -1) {
+			filterRemoveClass(target[i], "hidden");
+		}
+	}
+}
+
+function filterAddClass(element, name) {
+	var arr1 = element.className.split(" ");
+	var arr2 = name.split(" ");
+	for (var i = 0; i < arr2.length; i++) {
+		if (arr1.indexOf(arr2[i]) == -1) {
+			element.className += " " + arr2[i];
+		}
+	}
+}
+
+function filterRemoveClass(element, name) {
+	var arr1 = element.className.split(" ");
+	var arr2 = name.split(" ");
+	for (var i = 0; i < arr2.length; i++) {
+		while (arr1.indexOf(arr2[i]) > -1) {
+			arr1.splice(arr1.indexOf(arr2[i]), 1);     
+		}
+	}
+	element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("shadowFilterBtns");
+var btns = btnContainer.getElementsByClassName("btn filter-btn");
+for (var i = 0; i < btns.length; i++) {
+	btns[i].addEventListener("click", function(){
+		var current = document.getElementsByClassName("btn filter-btn active");
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	});
+}
+</script>
+

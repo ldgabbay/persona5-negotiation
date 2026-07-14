@@ -1,0 +1,13 @@
+
+<script>
+window.onload = onPageLoad();
+
+function onPageLoad() {
+	var switchState = JSON.parse(localStorage["royalCompact"] || false);
+	var compactSwitch = document.getElementById("royalCompact");
+	if (switchState) {
+		compactSwitch.checked = true;
+		toggleRoyalCompact(true);
+	}
+}
+</script>
