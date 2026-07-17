@@ -1,4 +1,4 @@
-.PHONY: build server clean
+.PHONY: build server clean distclean
 
 build: _site/_site.d
 	@echo
@@ -22,3 +22,6 @@ server: build
 
 clean:
 	command rm -rf _site
+
+distclean: clean
+	command rm -rf local/.bundle/ local/.jekyll-cache/
